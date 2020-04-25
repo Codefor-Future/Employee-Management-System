@@ -1,4 +1,4 @@
-var employeeList=[["default","30000000","34/43/34","23000","day","status"]]
+var employeeList=[["default","30000000","40000","Mumbai","Active","34/43/34","day"]]
 var selectedRow;
 var table=document.getElementById("employee_table").getElementsByTagName('tbody')[0]
 updateTable()
