@@ -1,5 +1,5 @@
-var employeeList=[["default","30000000","40000","Mumbai","Active","34/43/34","day"]]
-var selectedRow;
+var employeeList=[["default","30000000","34/43/34","23000","day","status"]]
+var selectedRow=0;
 var table=document.getElementById("employee_table").getElementsByTagName('tbody')[0]
 updateTable()
 function addEmployee(){
@@ -25,16 +25,8 @@ function updateTable(){//function to update table from employeeList array
     table.innerHTML=""
     var i=0;
     while(i<employeeList.length){
-        console.log(employeeList.length)
-    var x="black"
-        function color(y){
-            if(y===null){
-                this.x=black
-            }else{
-                this.x=y
-                console.log(x)
-            }
-        }
+        
+    
 
 
 
@@ -57,7 +49,12 @@ function updateTable(){//function to update table from employeeList array
     cell6.innerHTML=employeeList[i][2]
     cell7.innerHTML=employeeList[i][6]
     cell8.innerHTML=employeeList[i][4]
+
+    if(selectedRow===i){
+        row.style.background = "rgb(65, 121, 243, 0.66)"
+    }
         i++;
+
     }
     
 }
@@ -73,7 +70,7 @@ function formClear(){//function to clear form
 }
 function rowSelect(x){ //function to change selected row as the index of employeeList array.
     selectedRow=x
-   
+    updateTable()
 }
 function resetTable(){ //reset employeeList array to default value
     
@@ -98,3 +95,5 @@ function updateRow(){ //update values of selected row from values from form
     updateTable()
     formClear()
 }
+
+
